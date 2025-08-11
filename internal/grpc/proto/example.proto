@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option go_package = "internal/grpc/proto;proto";
+
+package example;
+
+service Example {
+  rpc GetExample (google.protobuf.Empty) returns (ExampleResponse) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message ExampleResponse {
+  string message = 1;
+  bool success = 2;
+}
